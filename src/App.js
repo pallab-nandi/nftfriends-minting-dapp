@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import ErrorPage from "./components/ErrorPage";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+// import BlogDetails from "./components/Pages/BlogDetails";
+import Home from "./components/Pages/Home";
+import Spacing from "./components/Spacing";
+import { ToastContainer } from 'react-toastify';
+// import WalletContext from "./contexts/walletContext";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {/* <WalletContext> */}
+      <Header />
+      <Spacing lg='80' md='80' />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/blog/:id" element={<BlogDetails />} /> */}
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+      <Footer />
+      <ToastContainer />
+      {/* </WalletContext> */}
+    </>
   );
 }
 
