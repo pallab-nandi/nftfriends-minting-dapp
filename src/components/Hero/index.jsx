@@ -33,8 +33,8 @@ export default function Hero({ title, mintNumber, mintMax, mintPrice, mintDeathL
               variant='cs-color1'
             />
           </Section>
-          <Section tag='h3' className="cs-hero_subtitle cs-font_18 cs-font_16_sm cs-body_line_height">Max 3 NFTs Per Wallet. Price <Section tag='span' className="cs-accent_color">{mintPrice}</Section> ETH <br />
-            Mint is Live Until <Section tag='span' className="cs-accent_color">{mintDeathLine}</Section></Section>
+          <Section tag='h3' className="cs-hero_subtitle cs-font_18 cs-font_16_sm cs-body_line_height">Max 1 NFT Per Wallet. Price <Section tag='span' className="cs-accent_color">{mintPrice}</Section> ETH <br />
+            Preclaim is Live Until <Section tag='span' className="cs-accent_color">{mintDeathLine}</Section></Section>
         </Section>
         <Section className="cs-hero_img">
           <img src={heroImageUrl} alt="Hero" />

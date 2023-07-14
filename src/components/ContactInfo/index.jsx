@@ -1,12 +1,12 @@
-import { Icon } from '@iconify/react';
+// import { Icon } from '@iconify/react';
 import React from 'react';
 import Section from '../Section';
-import Spacing from '../Spacing';
+// import Spacing from '../Spacing';
 
 export default function ContactInfo() {
   return (
     <Section className="cs-contact_info">
-      <Section tag="h2" className="cs-info_title">
+      {/* <Section tag="h2" className="cs-info_title">
         Contact Info
       </Section>
       <Spacing lg="30" md="30" />
@@ -38,7 +38,7 @@ export default function ContactInfo() {
             <span className="cs-medium">Info:</span> hey@gmail.com
           </Section>
         </Section>
-      </Section>
+      </Section> */}
     </Section>
   );
 }

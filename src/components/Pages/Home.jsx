@@ -15,38 +15,39 @@ import BlogSlider from '../Slider/BlogSlider'
 import RoadmapSlider from '../Slider/RoadmapSlider'
 import TeamSlider from '../Slider/TeamSlider'
 import Spacing from '../Spacing'
+import Countdown from '../countdown'
 
 export default function Home() {
   pageTitle('Home-2');
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
-  const accordionData1 = [
-    {
-      question: 'How to Mint an NFT?',
-      answer: 'There are many variations of pass ges of Lorem Ipsum available, but the majority have suffered alterat ion in some form. There are many variations of passages. There are many variations of pass ges of Lorem Ipsum available, but the majority have suffered alterat ion in some form. There are many variations of passages.'
-    },
-    {
-      question: 'What happens once purchase NFT?',
-      answer: 'There are many variations of pass ges of Lorem Ipsum available, but the majority have suffered alterat ion in some form. There are many variations of passages. There are many variations of pass ges of Lorem Ipsum available, but the majority have suffered alterat ion in some form. There are many variations of passages.'
-    },
-    {
-      question: 'How can I obtain NFTs?',
-      answer: 'There are many variations of pass ges of Lorem Ipsum available, but the majority have suffered alterat ion in some form. There are many variations of passages. There are many variations of pass ges of Lorem Ipsum available, but the majority have suffered alterat ion in some form. There are many variations of passages.'
-    },
-    {
-      question: 'Do NFTs appreciate in value?',
-      answer: 'There are many variations of pass ges of Lorem Ipsum available, but the majority have suffered alterat ion in some form. There are many variations of passages. There are many variations of pass ges of Lorem Ipsum available, but the majority have suffered alterat ion in some form. There are many variations of passages.'
-    }
-  ]
+  // const accordionData1 = [
+  //   {
+  //     question: 'How to Mint an NFT?',
+  //     answer: 'There are many variations of pass ges of Lorem Ipsum available, but the majority have suffered alterat ion in some form. There are many variations of passages. There are many variations of pass ges of Lorem Ipsum available, but the majority have suffered alterat ion in some form. There are many variations of passages.'
+  //   },
+  //   {
+  //     question: 'What happens once purchase NFT?',
+  //     answer: 'There are many variations of pass ges of Lorem Ipsum available, but the majority have suffered alterat ion in some form. There are many variations of passages. There are many variations of pass ges of Lorem Ipsum available, but the majority have suffered alterat ion in some form. There are many variations of passages.'
+  //   },
+  //   {
+  //     question: 'How can I obtain NFTs?',
+  //     answer: 'There are many variations of pass ges of Lorem Ipsum available, but the majority have suffered alterat ion in some form. There are many variations of passages. There are many variations of pass ges of Lorem Ipsum available, but the majority have suffered alterat ion in some form. There are many variations of passages.'
+  //   },
+  //   {
+  //     question: 'Do NFTs appreciate in value?',
+  //     answer: 'There are many variations of pass ges of Lorem Ipsum available, but the majority have suffered alterat ion in some form. There are many variations of passages. There are many variations of pass ges of Lorem Ipsum available, but the majority have suffered alterat ion in some form. There are many variations of passages.'
+  //   }
+  // ]
   return (
     <>
       <Hero
-        title='Discover &amp; Collect <br />nft artwork'
+        title='NFT FRIENDS <br />ALPHA'
         mintNumber='0'
-        mintMax='725'
-        mintPrice='0.02'
-        mintDeathLine='22 July'
+        mintMax='777'
+        mintPrice='0.2'
+        mintDeathLine=' 31 June'
         bgUrl='/images/hero_img_3.jpeg'
         heroImageUrl='/images/hero_img_1.png'
         animatedUrl='/images/hero_img_sm.png'
@@ -56,18 +57,18 @@ export default function Home() {
       <Spacing lg='100' md='70' />
       <Section className="container">
         <Section className="row">
-          <Section className="col-lg-3 col-6">
+          <Section className="col-lg-6 col-6">
             <Section className='cs-light_bg text-center cs-radius_10'>
               <Spacing lg='60' md='60' />
               <FunFact
-                number='365'
+                number='777'
                 title='Total Items'
               />
               <Spacing lg='60' md='60' />
             </Section>
             <Spacing lg='25' md='25' />
           </Section>
-          <Section className="col-lg-3 col-6">
+          {/* <Section className="col-lg-3 col-6">
             <Section className='cs-light_bg text-center cs-radius_10'>
               <Spacing lg='60' md='60' />
               <FunFact
@@ -77,19 +78,19 @@ export default function Home() {
               <Spacing lg='60' md='60' />
             </Section>
             <Spacing lg='25' md='25' />
-          </Section>
-          <Section className="col-lg-3 col-6">
+          </Section> */}
+          <Section className="col-lg-6 col-6">
             <Section className='cs-light_bg text-center cs-radius_10'>
               <Spacing lg='60' md='60' />
               <FunFact
-                number='1.72'
+                number='0.2'
                 title='Floor Price'
               />
               <Spacing lg='60' md='60' />
             </Section>
             <Spacing lg='25' md='25' />
           </Section>
-          <Section className="col-lg-3 col-6">
+          {/* <Section className="col-lg-3 col-6">
             <Section className='cs-light_bg text-center cs-radius_10'>
               <Spacing lg='60' md='60' />
               <FunFact
@@ -99,14 +100,14 @@ export default function Home() {
               <Spacing lg='60' md='60' />
             </Section>
             <Spacing lg='25' md='25' />
-          </Section>
+          </Section> */}
         </Section>
       </Section>
       <Spacing lg='70' md='40' />
       <Section className="container">
         <Section className="text-center">
           <SectionHeading
-            title='Minting Techniques'
+            title='Preclaim Techniques'
             subtitle='Simple Steps'
           />
         </Section>
@@ -115,30 +116,58 @@ export default function Home() {
           <Section className="col-xl-3 col-md-6">
             <CardStype3
               number='1'
-              title='Connect Your Wallet'
+              title='Connect Your Discord'
             />
             <Section className="cs-height_25 cs-height_lg_25"></Section>
           </Section>
           <Section className="col-xl-3 col-md-6">
             <CardStype3
               number='2'
-              title='Select Your Quantity'
+              title='Connect Your Wallet'
             />
             <Section className="cs-height_25 cs-height_lg_25"></Section>
           </Section>
           <Section className="col-xl-3 col-md-6">
             <CardStype3
               number='3'
-              title='Transaction Confirm'
+              title='Confirm Your Transaction'
             />
             <Section className="cs-height_25 cs-height_lg_25"></Section>
           </Section>
           <Section className="col-xl-3 col-md-6">
             <CardStype3
               number='4'
-              title='Recive Your NFTs'
+              title='Recive Your Rewords'
             />
             <Section className="cs-height_25 cs-height_lg_25"></Section>
+          </Section>
+        </Section>
+      </Section>
+      <Section className="container">
+        <Section className="row">
+          <Section className="col-lg-6 col-6">
+            <Section className='cs-light_bg text-center cs-radius_10'>
+              <Spacing lg='60' md='60' />
+              <FunFact
+                number='Fruit List'
+              ></FunFact>
+              <Spacing lg='25' md='25' />
+              <Countdown targetDate="2023-07-16T02:03:00Z" />
+              <Spacing lg='60' md='60' />
+            </Section>
+            <Spacing lg='25' md='25' />
+          </Section>
+          <Section className="col-lg-6 col-6">
+            <Section className='cs-light_bg text-center cs-radius_10'>
+              <Spacing lg='60' md='60' />
+              <FunFact
+                number='Friend List'
+              />
+              <Spacing lg='25' md='25' />
+              <Countdown targetDate="2023-07-14T09:15:00Z" />
+              <Spacing lg='60' md='60' />
+            </Section>
+            <Spacing lg='25' md='25' />
           </Section>
         </Section>
       </Section>
@@ -150,19 +179,18 @@ export default function Home() {
               <Spacing lg='0' md='40' />
               <Section className='cs-right_space_150'>
                 <SectionHeading
-                  title='Grab Special Monkey NFTs'
-                  subtitle='COLLECT'
+                  title='NFT FRIENDS ALPHA'
+                  subtitle='INTRODUCTION'
                 />
                 <Spacing lg='20' md='20' />
-                <Section tag='p'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look.</Section>
-                <Section tag='p'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look.</Section>
+                <Section tag='p'>Introducing "NFT FRIENDS ALPHA" - a collection of unique digital assets celebrating the power of friendship and creativity. Each NFT is a vibrant representation of joy, support, and connection. Built on Ethereum blockchain, these NFTs offer authenticity and ownership. Join us on this exciting journey and own a piece of art embodying companionship and collaboration.</Section>
                 <Spacing lg='25' md='15' />
                 <Button
                   variant='cs-btn_filed cs-accent_btn'
-                  btnLink='https://opensea.io/'
-                  btnText='COLLECT NFTs'
+                  btnLink='/'
+                  btnText='Join Our Discord'
                 >
-                  <Icon icon="ic:outline-library-add" />
+                  <Icon icon="la:discord" />
                 </Button>
               </Section>
             </Section>
@@ -185,7 +213,7 @@ export default function Home() {
         </Section>
         <Spacing lg='100' md='70' />
       </Section>
-      <Section className="container">
+      {/* <Section className="container">
         <Section className="row">
           <Section className="col-lg-4">
             <IconBox
@@ -299,7 +327,7 @@ export default function Home() {
           </Section>
         </Section>
         <Spacing lg='100' md='70' />
-      </Section>
+      </Section> */}
     </>
   )
 }

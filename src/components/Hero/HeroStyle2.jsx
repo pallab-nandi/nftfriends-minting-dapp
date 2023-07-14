@@ -22,8 +22,8 @@ export default function HeroStyle2({title, mintNumber, mintMax, mintPrice, mintD
         <Section className="cs-hero_text">
         <Section tag='h2' className="cs-hero_secondary_title cs-font_22 cs-font_18_sm">{mintNumber} / {mintMax} Minted</Section>
           <Section tag='h1' className="cs-hero_title cs-font_60 cs-font_36_sm cs-bold">{parse(title)}</Section>
-          <Section tag='h3' className="cs-hero_subtitle cs-font_20 cs-font_16_sm cs-body_line_height">Max 3 NFTs Per Wallet. Price <Section tag='span' className="cs-accent_color">{mintPrice}</Section> ETH <br />
-            Mint is Live Until <Section tag='span' className="cs-accent_color">{mintDeathLine}</Section></Section>
+          <Section tag='h3' className="cs-hero_subtitle cs-font_20 cs-font_16_sm cs-body_line_height">Max 1 NFT Per Wallet. Price <Section tag='span' className="cs-accent_color">{mintPrice}</Section> ETH <br />
+            Preclaim is Live Until <Section tag='span' className="cs-accent_color">{mintDeathLine}</Section></Section>
           <Section className="cs-btn_group">
             <Button 
               btnLink='/' 

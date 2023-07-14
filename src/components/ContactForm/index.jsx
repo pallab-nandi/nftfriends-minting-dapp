@@ -1,11 +1,11 @@
 import React from 'react'
-import Section from '../Section'
-import Spacing from '../Spacing'
+// import Section from '../Section'
+// import Spacing from '../Spacing'
 
 export default function ContactForm() {
   return (
     <form>
-      <Section className="row">
+      {/* <Section className="row">
         <Section className="col-lg-6">
           <Section className="cs-form_field_wrap">
             <label>Your Name</label>
@@ -37,7 +37,7 @@ export default function ContactForm() {
         <Section className="col-lg-12">
           <button className="cs-btn cs-btn_filed cs-accent_btn">Submit Now</button>
         </Section>
-      </Section>
+      </Section> */}
     </form>
   )
 }

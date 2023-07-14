@@ -33,7 +33,7 @@ export default function MintCard() {
           <Section className="cs-list_right">1 / 725 Minted</Section>
         </li> */}
         <li>
-          <Section className="cs-list_left">Quantity / <span className="cs-accent_color">0.25 ETH</span></Section>
+          <Section className="cs-list_left">Quantity / <span className="cs-accent_color">0.20 ETH</span></Section>
           <Section className="cs-list_right">
             <Section className="cs-quantity">
               <button className="cs-quantity_btn cs-center" onClick={handelSubtract}>
