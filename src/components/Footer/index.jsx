@@ -21,12 +21,12 @@ export default function Footer() {
           <Section className="cs-height_25 cs-height_lg_25" />
           <Section className="cs-social_btns cs-center">
             <Link to="/" className="cs-center cs-primary_color cs-accent_bg_hover cs-light_bg cs-white_color_hover">
-              <Icon icon="fa6-brands:facebook-f" />
+              <Icon icon="fa6-brands:discord" />
             </Link>
             <Link to="/" className="cs-center cs-primary_color cs-accent_bg_hover cs-light_bg cs-white_color_hover">
               <Icon icon="fa6-brands:twitter" />            
             </Link>
-            <Link to="/" className="cs-center cs-primary_color cs-accent_bg_hover cs-light_bg cs-white_color_hover">
+            {/* <Link to="/" className="cs-center cs-primary_color cs-accent_bg_hover cs-light_bg cs-white_color_hover">
               <Icon icon="fa6-brands:instagram" />
             </Link>
             <Link to="/" className="cs-center cs-primary_color cs-accent_bg_hover cs-light_bg cs-white_color_hover">
@@ -34,12 +34,12 @@ export default function Footer() {
             </Link>
             <Link to="/" className="cs-center cs-primary_color cs-accent_bg_hover cs-light_bg cs-white_color_hover">
               <Icon icon="fa6-brands:whatsapp" />              
-            </Link>
+            </Link> */}
           </Section>
         </Section>
         <Section className="cs-height_45 cs-height_lg_25" />
         <Section className="container">
-          <Section className="cs-copyright text-center">Copyright © 2022. All Rights Reserved by <span className="cs-primary_font cs-primary_color">AENFT</span></Section>
+          <Section className="cs-copyright text-center">Copyright © 2023. All Rights Reserved by <span className="cs-primary_font cs-primary_color">NFA</span></Section>
         </Section>
         <Section className="cs-height_25 cs-height_lg_25" />
       </Section>
