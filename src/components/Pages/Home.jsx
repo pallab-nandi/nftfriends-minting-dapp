@@ -16,6 +16,7 @@ import RoadmapSlider from '../Slider/RoadmapSlider'
 import TeamSlider from '../Slider/TeamSlider'
 import Spacing from '../Spacing'
 import Countdown from '../countdown'
+import StatusCard from '../Status/StatusCard'
 
 export default function Home() {
   pageTitle('Home-2');
@@ -168,6 +169,18 @@ export default function Home() {
               <Spacing lg='60' md='60' />
             </Section>
             <Spacing lg='25' md='25' />
+          </Section>
+        </Section>
+      </Section>
+      <Section id="status">
+        <Spacing lg='75' md='45' />
+        <Section className="container">
+          <Section className="text-center">
+            <SectionHeading
+              title='STATUS'
+              subtitle='Preclaim Status'
+            />
+            <StatusCard />
           </Section>
         </Section>
       </Section>
