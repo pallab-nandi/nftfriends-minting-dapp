@@ -4,6 +4,15 @@
   border-radius: 10px;
   transition: all 0.4s ease;
 
+  .cs-cta_btns {
+    flex-wrap: wrap;
+    margin: -7px;
+
+    >* {
+      margin: 7px;
+    }
+  }
+
   &:hover {
     transform: translateY(-5px);
   }
