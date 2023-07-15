@@ -48,7 +48,7 @@ export default function Home() {
         mintNumber='0'
         mintMax='777'
         mintPrice='0.2'
-        mintDeathLine=' 31 June'
+        mintDeathLine=' 31 August'
         bgUrl='/images/hero_img_3.jpeg'
         heroImageUrl='/images/hero_img_1.png'
         animatedUrl='/images/hero_img_sm.png'
@@ -177,9 +177,10 @@ export default function Home() {
         <Section className="container">
           <Section className="text-center">
             <SectionHeading
-              title='STATUS'
-              subtitle='Preclaim Status'
+              title='Preclaim Status'
+              subtitle='STATUS'
             />
+            <Spacing lg='50' md='30' />
             <StatusCard />
           </Section>
         </Section>
