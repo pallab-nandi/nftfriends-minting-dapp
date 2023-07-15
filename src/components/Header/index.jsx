@@ -5,14 +5,14 @@ import { Link as ScrollLink } from 'react-scroll';
 import Modal from '../Modal';
 import ModeSwitch from '../ModeSwitch';
 import Section from '../Section';
-import DropDown from './DropDown';
+// import DropDown from './DropDown';
 import './header.scss'
 import { walletContext } from '../../contexts/walletContext'
 
 
 export default function Header() {
   const [mobileToggle, setMobileToggle] = useState(false)
-  // const { account } = useContext(walletContext)
+  const { account } = useContext(walletContext)
 
   return (
     <>
@@ -42,12 +42,12 @@ export default function Header() {
               <Section className="cs-main_header_right">
                 <Section className="cs-toolbox">
                   <ModeSwitch />
-                  {/* {account === '' ?
+                  {account === '' ?
                     <Modal modalType='connect' btnText='Connect' btnIcon /> :
                     <Section tag='span' className="cs-btn cs-btn_filed cs-accent_btn">
                       <Icon icon="ion:wallet-outline" />
-                      <Section tag='span'>{account.substring(0, 10)}</Section>
-                    </Section>} */}
+                      <Section tag='span'>{`${account.substring(0, 5)}...${account.substring(account.length - 4, account.length)}`}</Section>
+                    </Section>}
                 </Section>
               </Section>
             </Section>

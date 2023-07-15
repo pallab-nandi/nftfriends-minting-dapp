@@ -1,31 +1,30 @@
-/* import { createContext, useState } from "react"
-import { isWalletConnected, connectWallet } from '../utils/web3functions'
+import { createContext, useState } from "react"
+import { collectAddress } from '../utils/web3functions'
 
 export const walletContext = createContext({
-    account:'',
-    setAccount:() => {}
+    account: '',
+    setAccount: () => { }
 })
 
 
 const WalletContext = ({ children }) => {
-    const [account, setAccount] = useState('')
-    const [mint, setMint] = useState(false)
-    const value = { account, setAccount, mint, setMint }
-    const handleConnection = () => {
-        if( isWalletConnected() ){
-            const handleWalletConnect = async () => {
-                let accounts = await connectWallet();
-                if( accounts.length ){
-                    setAccount(accounts[0])
-                }
-            }
-            
-            handleWalletConnect()
-        }
+    const [account, setAccount] = useState('');
+    // const { account } = useContext(walletContext);
+
+    const value = { account, setAccount }
+
+
+    const walletHandle = async () => {
+        await collectAddress()
+            .then((data) => setAccount(data))
+            .catch(err => console.log(err));
     }
 
-    handleConnection();
-    
+    walletHandle();
+
+    if (account == null) setAccount('');
+
+
     return (
         <walletContext.Provider value={value}>
             {children}
@@ -34,5 +33,3 @@ const WalletContext = ({ children }) => {
 }
 
 export default WalletContext
-
- */
