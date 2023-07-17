@@ -3,8 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Icon } from '@iconify/react'
 import Button from '../Button'
 import Spacing from '../Spacing'
+import Section from '../Section';
 
-const Countdown = ({ targetDate }) => {
+const Countdown = ({ targetDate, onClick }) => {
   const [countdown, setCountdown] = useState({
     days: '00',
     hours: '00',
@@ -92,15 +93,14 @@ const Countdown = ({ targetDate }) => {
       <div className="row">
         <div className="col-md-12 text-center">
           <Spacing lg='25' md='25' />
-          {!countdown.ended && (
-            <Button
-              variant='cs-btn_filed cs-accent_btn'
-              btnLink='https://getbootstrap.com/docs/5.3/getting-started/rtl/#ltr-and-rtl-at-the-same-time'
-              btnText='Preclaim'
-            >
-              <Icon icon="simple-icons:ethereum" />
-            </Button>
-          )}
+          {/* {!countdown.ended && (
+            <span onClick={onClick}>
+              <Section tag='span' className="cs-btn cs-btn_filed cs-accent_btn">
+                <Icon icon="simple-icons:ethereum" />
+                <Section tag='span'>{'Preclaim'}</Section>
+              </Section>
+            </span>
+          )} */}
         </div>
       </div>
     </div>

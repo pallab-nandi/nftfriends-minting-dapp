@@ -17,6 +17,8 @@ import TeamSlider from '../Slider/TeamSlider'
 import Spacing from '../Spacing'
 import Countdown from '../countdown'
 import StatusCard from '../Status/StatusCard'
+import { _fruitClaim } from '../../utils/web3'
+import supplyLeft from '../../utils/web3'
 
 export default function Home() {
   pageTitle('Home-2');
@@ -45,7 +47,7 @@ export default function Home() {
     <>
       <Hero
         title='NFT FRIENDS <br />ALPHA'
-        mintNumber='0'
+        mintNumber={`${supplyLeft}`}
         mintMax='777'
         mintPrice='0.2'
         mintDeathLine=' 31 June'
@@ -154,6 +156,12 @@ export default function Home() {
               ></FunFact>
               <Spacing lg='25' md='25' />
               <Countdown targetDate="2023-07-16T02:03:00Z" />
+              <span onClick={() => _fruitClaim()}>
+                <Section tag='span' className="cs-btn cs-btn_filed cs-accent_btn">
+                  <Icon icon="simple-icons:ethereum" />
+                  <Section tag='span'>{'Preclaim'}</Section>
+                </Section>
+              </span>
               <Spacing lg='60' md='60' />
             </Section>
             <Spacing lg='25' md='25' />
