@@ -4,7 +4,7 @@ import parse from 'html-react-parser';
 import Button from '../Button';
 import './hero.scss'
 import Section from '../Section';
-import Modal from '../Modal';
+// import Modal from '../Modal';
 // import { walletContext } from '../../contexts/walletContext'
 
 
@@ -29,7 +29,7 @@ export default function Hero({ title, mintNumber, mintMax, mintPrice, mintDeathL
               <Modal modalType='connect' btnText='Connect' btnIcon />} */}
             <Button
               btnLink='/'
-              btnText='Join the Waitlist'
+              btnText='Join Discord'
               variant='cs-color1'
             />
           </Section>
