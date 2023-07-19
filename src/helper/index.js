@@ -1,3 +1,3 @@
 export const pageTitle = (title) => {
-  return ( document.title = title + " - NFT Minting React Template");
+  return (document.title = title + " - NFT FRIENDS ALPHA");
 }
