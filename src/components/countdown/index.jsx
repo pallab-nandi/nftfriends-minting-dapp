@@ -11,7 +11,7 @@ const Countdown = ({ targetDate, onClick }) => {
     hours: '00',
     minutes: '00',
     seconds: '00',
-    ended: false // Added a new property to track countdown end
+    ended: false
   });
 
   useEffect(() => {
@@ -72,27 +72,27 @@ const Countdown = ({ targetDate, onClick }) => {
 
   return (
     <div className="container">
-      <div className="row">
+      <div style={{ color: 'goldenrod' }} className="row">
         <div className="col-md-3">
-          <h1>{countdown.days}</h1>
-          <p>Days</p>
+          <h1 style={{ color: 'goldenrod' }}>{countdown.days}</h1>
+          <p className='cs_size-20'>Days</p>
         </div>
         <div className="col-md-3">
-          <h1>{countdown.hours}</h1>
-          <p>Hours</p>
+          <h1 style={{ color: 'goldenrod' }}>{countdown.hours}</h1>
+          <p className='cs_size-20'>Hours</p>
         </div>
         <div className="col-md-3">
-          <h1>{countdown.minutes}</h1>
-          <p>Minutes</p>
+          <h1 style={{ color: 'goldenrod' }}>{countdown.minutes}</h1>
+          <p className='cs_size-20'>Minutes</p>
         </div>
         <div className="col-md-3">
-          <h1>{countdown.seconds}</h1>
-          <p>Seconds</p>
+          <h1 style={{ color: 'goldenrod' }}>{countdown.seconds}</h1>
+          <p className='cs_size-20'>Seconds</p>
         </div>
       </div>
       <div className="row">
         <div className="col-md-12 text-center">
-          <Spacing lg='25' md='25' />
+          <Spacing lg="25" md="25" />
           {/* {!countdown.ended && (
             <span onClick={onClick}>
               <Section tag='span' className="cs-btn cs-btn_filed cs-accent_btn">

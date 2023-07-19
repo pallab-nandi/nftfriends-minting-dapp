@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { pageTitle } from '../../helper'
 import Accordion from '../Accordion'
 import Button from '../Button'
-import CardStype3 from '../Card/CardStype3'
+import Card from '../Card'
 import ContactForm from '../ContactForm'
 import ContactInfo from '../ContactInfo'
 import FunFact from '../FunFact'
@@ -19,9 +19,10 @@ import Countdown from '../countdown'
 import StatusCard from '../Status/StatusCard'
 import { _fruitClaim } from '../../utils/web3'
 import supplyLeft from '../../utils/web3'
+import CardStype3 from '../Card/CardStype3'
 
 export default function Home() {
-  pageTitle('Home-2');
+  pageTitle('NFA');
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -46,7 +47,7 @@ export default function Home() {
   return (
     <>
       <Hero
-        title='NFT FRIENDS <br />ALPHA'
+        title='NFT FRIENDS <br/> ALPHA'
         mintNumber={`${supplyLeft}`}
         mintMax='777'
         mintPrice='0.2'
@@ -57,90 +58,37 @@ export default function Home() {
         variant='cs-type1'
         bubble
       />
-      <Spacing lg='100' md='70' />
-      <Section className="container">
-        <Section className="row">
-          <Section className="col-lg-6 col-6">
-            <Section className='cs-light_bg text-center cs-radius_10'>
-              <Spacing lg='60' md='60' />
-              <FunFact
-                number='777'
-                title='Total Items'
-              />
-              <Spacing lg='60' md='60' />
-            </Section>
-            <Spacing lg='25' md='25' />
-          </Section>
-          {/* <Section className="col-lg-3 col-6">
-            <Section className='cs-light_bg text-center cs-radius_10'>
-              <Spacing lg='60' md='60' />
-              <FunFact
-                number='1125'
-                title='Total Owners'
-              />
-              <Spacing lg='60' md='60' />
-            </Section>
-            <Spacing lg='25' md='25' />
-          </Section> */}
-          <Section className="col-lg-6 col-6">
-            <Section className='cs-light_bg text-center cs-radius_10'>
-              <Spacing lg='60' md='60' />
-              <FunFact
-                number='0.2'
-                title='Floor Price'
-              />
-              <Spacing lg='60' md='60' />
-            </Section>
-            <Spacing lg='25' md='25' />
-          </Section>
-          {/* <Section className="col-lg-3 col-6">
-            <Section className='cs-light_bg text-center cs-radius_10'>
-              <Spacing lg='60' md='60' />
-              <FunFact
-                number='42.2'
-                title='Volume Traded'
-              />
-              <Spacing lg='60' md='60' />
-            </Section>
-            <Spacing lg='25' md='25' />
-          </Section> */}
-        </Section>
-      </Section>
-      <Spacing lg='70' md='40' />
-      <Section className="container">
-        <Section className="text-center">
+      <Spacing lg='50' md='50' />
+      <Section id="claim" className="container">
+        <Section className="cs-right_space_40">
           <SectionHeading
-            title='Preclaim Techniques'
+            title='Claim/Reserve Instructions'
             subtitle='Simple Steps'
           />
         </Section>
-        <Spacing lg='50' md='30' />
+        <Spacing lg='50' md='50' />
         <Section className="row">
-          <Section className="col-xl-3 col-md-6">
+          <Section className="col-xl-3">
             <CardStype3
-              number='1'
               title='Connect Your Discord'
             />
             <Section className="cs-height_25 cs-height_lg_25"></Section>
           </Section>
-          <Section className="col-xl-3 col-md-6">
+          <Section className="col-xl-3">
             <CardStype3
-              number='2'
               title='Connect Your Wallet'
             />
             <Section className="cs-height_25 cs-height_lg_25"></Section>
           </Section>
-          <Section className="col-xl-3 col-md-6">
+          <Section className="col-xl-3">
             <CardStype3
-              number='3'
               title='Confirm Your Transaction'
             />
             <Section className="cs-height_25 cs-height_lg_25"></Section>
           </Section>
-          <Section className="col-xl-3 col-md-6">
+          <Section className="col-xl-3">
             <CardStype3
-              number='4'
-              title='Recive Your Rewords'
+              title='Reserve Your Precious Pass'
             />
             <Section className="cs-height_25 cs-height_lg_25"></Section>
           </Section>
@@ -148,39 +96,40 @@ export default function Home() {
       </Section>
       <Section className="container">
         <Section className="row">
-          <Section className="col-lg-6 col-6">
+          <Section className="col-xl-5.7 col-md-6 ">
+            <Section className='cs_size-23 cs-light_bg text-center cs-card cs-style3 cs-radius_10'>
+              <Section tag='p' style={{ color: '#00d4ff' }}>{`Total Supply: 777`}</Section>
+            </Section>
+            <Spacing lg='25' md='25' />
+            <Section className='cs_size-23 cs-light_bg text-center cs-card cs-style3 cs-radius_10'>
+              <Section tag='p' style={{ color: '#00d4ff' }}>{'Price :  O.2 ETH'}</Section>
+            </Section>
+            <Spacing lg='25' md='25' />
+            <Section className='cs_size-23 cs-light_bg text-center cs-card cs-style3 cs-radius_10'>
+              <Section tag='p' style={{ color: '#00d4ff' }}>{`Supply Left: ${777 - supplyLeft}`}</Section>
+            </Section>
+          </Section>
+          <Section className="col-lg-6 cs-card cs-style3 ">
             <Section className='cs-light_bg text-center cs-radius_10'>
-              <Spacing lg='60' md='60' />
-              <FunFact
-                number='Fruit List'
-              ></FunFact>
               <Spacing lg='25' md='25' />
-              <Countdown targetDate="2023-07-16T02:03:00Z" />
+              <FunFact
+                title='Fruit List Timer'
+              />
+              <Spacing lg='25' md='25' />
+              <Countdown targetDate="2023-07-20T02:03:00Z" />
               <span onClick={() => _fruitClaim()}>
                 <Section tag='span' className="cs-btn cs-btn_filed cs-accent_btn">
                   <Icon icon="simple-icons:ethereum" />
-                  <Section tag='span'>{'Preclaim'}</Section>
+                  <Section tag='span'>{'Claim'}</Section>
                 </Section>
               </span>
-              <Spacing lg='60' md='60' />
-            </Section>
-            <Spacing lg='25' md='25' />
-          </Section>
-          <Section className="col-lg-6 col-6">
-            <Section className='cs-light_bg text-center cs-radius_10'>
-              <Spacing lg='60' md='60' />
-              <FunFact
-                number='Friend List'
-              />
               <Spacing lg='25' md='25' />
-              <Countdown targetDate="2023-07-14T09:15:00Z" />
-              <Spacing lg='60' md='60' />
             </Section>
-            <Spacing lg='25' md='25' />
           </Section>
         </Section>
       </Section>
-      <Section id="status">
+
+      {/* <Section id="status">
         <Spacing lg='75' md='45' />
         <Section className="container">
           <Section className="text-center">
@@ -192,8 +141,8 @@ export default function Home() {
             <StatusCard />
           </Section>
         </Section>
-      </Section>
-      <Section tag='section' id='about'>
+      </Section> */}
+      {/* <Section tag='section' id='about'>
         <Spacing lg='75' md='45' />
         <Section className="container">
           <Section className="row align-items-center flex-column-reverse-lg">
@@ -234,7 +183,7 @@ export default function Home() {
           </Section>
         </Section>
         <Spacing lg='100' md='70' />
-      </Section>
+      </Section> */}
       {/* <Section className="container">
         <Section className="row">
           <Section className="col-lg-4">

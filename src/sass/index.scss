@@ -12,12 +12,18 @@ $accent: #0052FF;
 
 
 // Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Oxygen:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat+Alternates:wght@500&display=swap');
+
 
 body,
 html {
   color: $secondary;
-  font-family: 'Inter', sans-serif;
+  // font-family: 'Abril Fatface', cursive;
+  font-family: 'Michroma', 'Montserrat Alternates', 'Oxygen', 'Abril-Fatface', 'Inter', sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.6em;
@@ -37,7 +43,7 @@ h6 {
   margin: 0 0 20px 0;
   font-weight: 600;
   line-height: 1.2em;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Michroma', 'Abril Fatface', sans-serif;
 }
 
 .cs-primary_font {
@@ -45,11 +51,11 @@ h6 {
 }
 
 .cs-primary_font {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Abril Fatface', sans-serif;
 }
 
 .cs-secondary_font {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Oxygen', sans-serif;
 }
 
 h1 {
@@ -78,6 +84,14 @@ h6 {
 
 p {
   margin-bottom: 15px;
+}
+
+.cs_size-23 {
+  font-size: 23px;
+}
+
+.cs_size-20 {
+  font-size: 20px;
 }
 
 ul {
@@ -119,13 +133,13 @@ img {
 a {
   color: inherit;
   text-decoration: none;
-  transition: all 0.3s ease;
+  transition: all 0.0s ease;
   cursor: pointer;
 }
 
 button {
   color: inherit;
-  transition: all 0.3s ease;
+  transition: all 0.0s ease;
 }
 
 a:hover {
