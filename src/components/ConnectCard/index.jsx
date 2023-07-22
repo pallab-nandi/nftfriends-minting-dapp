@@ -4,15 +4,21 @@ import Section from '../Section'
 import { isMetaMaskInstalled, connectWallet } from '../../utils/web3functions'
 import { toast } from 'react-toastify'
 import { walletContext } from '../../contexts/walletContext'
+import { DiscordAuthContext } from '../../contexts/discordContext'
 
 export default function ConnectCard() {
   const { setAccount } = useContext(walletContext)
+  const { userData } = useContext(DiscordAuthContext)
 
   const handleConnectWallet = async (e) => {
     e.preventDefault();
     if (!isMetaMaskInstalled()) {
       toast.error("Metamask isn't installed!");
     } else {
+      if (!userData?.username) {
+        toast.warning('Please login through Discord first!');
+        return
+      }
       await connectWallet()
         .then((data) => {
           setAccount(data[0]);
