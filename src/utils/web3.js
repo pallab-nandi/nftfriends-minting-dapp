@@ -59,12 +59,14 @@ const _claimStatus = async (accounts) => {
 }
 
 const _remainingSupply = async () => {
-    const provider = new ethers.BrowserProvider(window.ethereum);
-    // const signer = provider.getSigner();
-    const contract = new ethers.Contract(contractAddress, abi, provider);
+    if (window.ethereum) {
+        const provider = new ethers.BrowserProvider(window.ethereum);
+        // const signer = provider.getSigner();
+        const contract = new ethers.Contract(contractAddress, abi, provider);
 
-    const count = await contract.remainingSupply();
-    return count;
+        const count = await contract.remainingSupply();
+        return count;
+    }
 }
 
 function listenForTransactionMine(transactionResponse, provider) {
