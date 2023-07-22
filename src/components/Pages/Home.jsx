@@ -48,7 +48,7 @@ export default function Home() {
     <>
       <Hero
         title='NFT FRIENDS <br/> ALPHA'
-        mintNumber={`${supplyLeft}`}
+        mintNumber={`${supplyLeft || 243}`}
         mintMax='777'
         mintPrice='0.2'
         mintDeathLine=' 31 August'
@@ -106,7 +106,7 @@ export default function Home() {
             </Section>
             <Spacing lg='25' md='25' />
             <Section className='cs_size-23 cs-light_bg text-center cs-card cs-style3 cs-radius_10'>
-              <Section tag='p' style={{ color: '#00d4ff' }}>{`Supply Left: ${777 - supplyLeft}`}</Section>
+              <Section tag='p' style={{ color: '#00d4ff' }}>{`Supply Left: ${777 - (supplyLeft || 243)}`}</Section>
             </Section>
           </Section>
           <Section className="col-lg-6 cs-card cs-style3 ">
