@@ -1,8 +1,8 @@
 import { Icon } from '@iconify/react'
 import React, { useState } from 'react'
 import ConnectCard from '../ConnectCard';
-import MintCard from '../MintCard';
 import Section from '../Section';
+import Status from '../Status';
 
 export default function Modal({ modalType, btnText, btnIcon }) {
   const [modal, setModal] = useState(false);
@@ -24,6 +24,7 @@ export default function Modal({ modalType, btnText, btnIcon }) {
                 </svg>
               </button>
               {modalType === 'connect' && <ConnectCard />}
+              {/* {modalType === 'connect' && <Status />} */}
             </Section>
           </Section>
         </Section>
