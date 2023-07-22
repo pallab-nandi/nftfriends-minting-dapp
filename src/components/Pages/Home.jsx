@@ -26,6 +26,7 @@ export default function Home() {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+  const targetDate = new Date('2023-07-25T12:00:00').getTime();
   // const accordionData1 = [
   //   {
   //     question: 'How to Mint an NFT?',
@@ -112,17 +113,9 @@ export default function Home() {
           <Section className="col-lg-6 cs-card cs-style3 ">
             <Section className='cs-light_bg text-center cs-radius_10'>
               <Spacing lg='25' md='25' />
-              <FunFact
-                title='Fruit List Timer'
-              />
-              <Spacing lg='25' md='25' />
-              <Countdown targetDate="2023-07-20T02:03:00Z" />
-              <span onClick={() => _fruitClaim()}>
-                <Section tag='span' className="cs-btn cs-btn_filed cs-accent_btn">
-                  <Icon icon="simple-icons:ethereum" />
-                  <Section tag='span'>{'Claim'}</Section>
-                </Section>
-              </span>
+              <Countdown />
+              {/* <Countdown targetDate="2023-07-23T00:00:00Z" /> */}
+              {/* <Countdown targetDate="2023-07-24T00:00:00Z" initialDate="2023-07-21T00:00:00Z" /> */}
               <Spacing lg='25' md='25' />
             </Section>
           </Section>
