@@ -1,21 +1,38 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Icon } from '@iconify/react';
+import Button from '../Button';
 import Spacing from '../Spacing';
 import Section from '../Section';
 import FunFact from '../FunFact';
-import { _fruitClaim } from '../../utils/web3';
-import TwentyFourHourCountdown from './twofourCountdown';
+import { _friendClaim } from '../../utils/web3';
 
-const Countdown = () => {
+const renderPreclaimEnded = () => {
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12 text-center">
+          <FunFact title="Friend List Timer" />
+          <Spacing lg="25" md="25" />
+          <h1 style={{ color: 'goldenrod' }}> Claim Complete</h1>
+          <p>Event has already occurred</p>
+          <Spacing lg="25" md="25" />
+          <Button btnText="Ended">
+            <Icon icon="ri:lock-line" />
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const TwentyFourHourCountdown = () => {
   const [countdown, setCountdown] = useState({
-    days: 2,
+    days: 0,
     hours: 0,
     minutes: 0,
     seconds: 10,
   });
-
-  const [countdownFinished, setCountdownFinished] = useState(false);
 
   const updateCountdown = () => {
     setCountdown((prevCountdown) => {
@@ -34,7 +51,6 @@ const Countdown = () => {
           seconds: updatedSeconds,
         };
       } else {
-        setCountdownFinished(true); // Countdown has finished
         return prevCountdown;
       }
     });
@@ -48,45 +64,49 @@ const Countdown = () => {
     return () => clearInterval(timer);
   }, []);
 
-  if (!countdownFinished) {
-    return (
+
+  if (countdown.days === 0 && countdown.hours === 0 && countdown.minutes === 0 && countdown.seconds === 0) {
+    return renderPreclaimEnded();
+  }
+
+
+  return (
+    <div className="container">
+      <FunFact title="Friend List Timer" />
+      <Spacing lg="25" md="25" />
       <div className="container">
-        <FunFact title='Fruit List Timer' />
-        <Spacing lg='25' md='25' />
         <div style={{ color: 'goldenrod' }} className="row">
           <div className="col-md-3">
             <h1 style={{ color: 'goldenrod' }}>{countdown.days}</h1>
-            <p className='cs_size-20'>Days</p>
+            <p className="cs_size-20">Days</p>
           </div>
           <div className="col-md-3">
             <h1 style={{ color: 'goldenrod' }}>{countdown.hours}</h1>
-            <p className='cs_size-20'>Hours</p>
+            <p className="cs_size-20">Hours</p>
           </div>
           <div className="col-md-3">
             <h1 style={{ color: 'goldenrod' }}>{countdown.minutes}</h1>
-            <p className='cs_size-20'>Minutes</p>
+            <p className="cs_size-20">Minutes</p>
           </div>
           <div className="col-md-3">
             <h1 style={{ color: 'goldenrod' }}>{countdown.seconds}</h1>
-            <p className='cs_size-20'>Seconds</p>
+            <p className="cs_size-20">Seconds</p>
           </div>
         </div>
         <div className="row">
           <div className="col-md-12 text-center">
             <Spacing lg="25" md="25" />
-            <span onClick={() => _fruitClaim()}>
-              <Section tag='span' className="cs-btn cs-btn_filed cs-accent_btn">
+            <span onClick={() => _friendClaim()}>
+              <Section tag="span" className="cs-btn cs-btn_filed cs-accent_btn">
                 <Icon icon="simple-icons:ethereum" />
-                <Section tag='span'>{'Claim'}</Section>
+                <Section tag="span">{'Claim'}</Section>
               </Section>
             </span>
           </div>
         </div>
       </div>
-    );
-  } else {
-    return <TwentyFourHourCountdown />;
-  }
+    </div>
+  );
 };
 
-export default Countdown;
+export default TwentyFourHourCountdown;
