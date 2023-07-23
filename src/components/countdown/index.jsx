@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Icon } from '@iconify/react';
 import Spacing from '../Spacing';
@@ -6,14 +6,18 @@ import Section from '../Section';
 import FunFact from '../FunFact';
 import { _fruitClaim } from '../../utils/web3';
 import TwentyFourHourCountdown from './twofourCountdown';
+import { DiscordAuthContext } from '../../contexts/discordContext';
+import { toast } from 'react-toastify';
 
-const Countdown = () => {
+const Countdown = ({ onTransactionComplete }) => {
   const [countdown, setCountdown] = useState({
     days: 2,
     hours: 0,
     minutes: 0,
     seconds: 10,
   });
+
+  const { userData, handleRole } = useContext(DiscordAuthContext)
 
   const [countdownFinished, setCountdownFinished] = useState(false);
 
@@ -39,6 +43,20 @@ const Countdown = () => {
       }
     });
   };
+
+  const useClaimHandle = async () => {
+
+    if (!userData?.username) {
+      toast.warn('Discord is not logged in!')
+      return;
+    }
+
+    const tx = await _fruitClaim();
+    if (tx) {
+      // handleRole(userData.id);
+      onTransactionComplete(tx);
+    }
+  }
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -74,7 +92,7 @@ const Countdown = () => {
         <div className="row">
           <div className="col-md-12 text-center">
             <Spacing lg="25" md="25" />
-            <span onClick={() => _fruitClaim()}>
+            <span onClick={useClaimHandle}>
               <Section tag='span' className="cs-btn cs-btn_filed cs-accent_btn">
                 <Icon icon="simple-icons:ethereum" />
                 <Section tag='span'>{'Claim'}</Section>
