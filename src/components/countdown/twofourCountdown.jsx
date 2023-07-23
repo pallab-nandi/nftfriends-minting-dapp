@@ -27,7 +27,9 @@ const renderPreclaimEnded = () => {
 };
 
 const TwentyFourHourCountdown = () => {
-  const [countdown, setCountdown] = useState({
+  const savedCountdownState = JSON.parse(localStorage.getItem('friendCountdownState'));
+
+  const [countdown, setCountdown] = useState(savedCountdownState || {
     days: 0,
     hours: 0,
     minutes: 0,
@@ -64,11 +66,14 @@ const TwentyFourHourCountdown = () => {
     return () => clearInterval(timer);
   }, []);
 
+  useEffect(() => {
+    // Dont Forget to change the value
+    localStorage.removeItem('friendCountdownState', JSON.stringify(countdown));
+  }, [countdown]);
 
   if (countdown.days === 0 && countdown.hours === 0 && countdown.minutes === 0 && countdown.seconds === 0) {
     return renderPreclaimEnded();
   }
-
 
   return (
     <div className="container">
@@ -110,3 +115,4 @@ const TwentyFourHourCountdown = () => {
 };
 
 export default TwentyFourHourCountdown;
+
