@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { pageTitle } from '../../helper'
 import Accordion from '../Accordion'
 import Button from '../Button'
@@ -20,6 +20,7 @@ import StatusCard from '../Status/StatusCard'
 import { _fruitClaim } from '../../utils/web3'
 import supplyLeft from '../../utils/web3'
 import CardStype3 from '../Card/CardStype3'
+import StatusPop from '../Status'
 
 export default function Home() {
   pageTitle('NFA');
@@ -27,6 +28,16 @@ export default function Home() {
     window.scrollTo(0, 0)
   }, [])
   const targetDate = new Date('2023-07-25T12:00:00').getTime();
+
+  const [popup, setPopup] = useState(false);
+  const [txData, setTxData] = useState('');
+
+  const handlePopup = (tx) => {
+    if (tx) {
+      setTxData(tx);
+      setPopup(true);
+    }
+  }
   // const accordionData1 = [
   //   {
   //     question: 'How to Mint an NFT?',
@@ -113,7 +124,7 @@ export default function Home() {
           <Section className="col-lg-6 cs-card cs-style3 ">
             <Section className='cs-light_bg text-center cs-radius_10'>
               <Spacing lg='25' md='25' />
-              <Countdown />
+              <Countdown onTransactionComplete={handlePopup} />
               {/* <Countdown targetDate="2023-07-23T00:00:00Z" /> */}
               {/* <Countdown targetDate="2023-07-24T00:00:00Z" initialDate="2023-07-21T00:00:00Z" /> */}
               <Spacing lg='25' md='25' />
@@ -121,6 +132,7 @@ export default function Home() {
           </Section>
         </Section>
       </Section>
+      {popup && <StatusPop tx={txData} />}
 
       {/* <Section id="status">
         <Spacing lg='75' md='45' />

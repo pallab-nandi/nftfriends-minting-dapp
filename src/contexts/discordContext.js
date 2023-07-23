@@ -1,6 +1,7 @@
 import React, { useState, createContext, useContext } from 'react';
 import { Icon } from '@iconify/react';
 import Section from '../components/Section';
+import axios from 'axios'
 
 
 export const DiscordAuthContext = createContext();
@@ -67,9 +68,25 @@ export const DiscordAuth = ({ children }) => {
       });
   };
 
+  const handleRole = async (memberId) => {
+    /* await axios.put(`https://discord.com/guilds/1121704043539091537/members/${memberId}/roles/1130452854340067358`, {
+      headers: {
+        Authorization: `Bot MTEzMDQ0MDEzMzczNzQ1NTc3Ng.Gk3eUU.kmmggv2F9svTHuRDa1ndwH8j5VSzvTVkY-M7gk`
+      }
+    }) */
+    await fetch(`https://discord.com/api/guilds/1121704043539091537/members/${memberId}/roles/1130452854340067358`, {
+      mode: 'cors',
+      method: 'PUT',
+      headers: {
+        Authorization: `Bot MTEzMTQ5NzU4ODE4NTY0MTA1Mw.GJ9e9T.BGGQo8uQ0S8mHDROKfzKlaUbSHL0f4kyAM6wtg`,
+        "Access-Control-Allow-Origin": "*"
+      }
+    })
+  }
+
   return (
     <DiscordAuthContext.Provider
-      value={{ isLoggedIn, userData, handleSignIn, handleSignOut, handleCallback, setUserData, setIsLoggedIn }}
+      value={{ isLoggedIn, userData, handleSignIn, handleSignOut, handleCallback, setUserData, setIsLoggedIn, handleRole }}
     >
       {children}
     </DiscordAuthContext.Provider>

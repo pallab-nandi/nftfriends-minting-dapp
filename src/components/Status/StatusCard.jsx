@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react';
 import Button from '../Button';
 import Spacing from '../Spacing'
 
-export default function StatusCard({ sliderItemBg, sliderItemVariant }) {
+export default function StatusCard({ tx }) {
 
 
   return (
@@ -19,7 +19,7 @@ export default function StatusCard({ sliderItemBg, sliderItemVariant }) {
       <Section tag='p' className="cs-m0">Discord Role Acquired : Not claimed</Section>
       <Spacing lg='25' md='25' />
       <Button
-        btnLink='https://etherscan.io/'
+        btnLink={`https://sepolia.etherscan.io/tx/${tx}`} // to be changed in mainnet
         btnText='View On Etherscan'
         variant='cs-btn_filed cs-white_btn_2'
       >
