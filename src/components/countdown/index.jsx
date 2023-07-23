@@ -8,11 +8,13 @@ import { _fruitClaim } from '../../utils/web3';
 import TwentyFourHourCountdown from './twofourCountdown';
 
 const Countdown = () => {
-  const [countdown, setCountdown] = useState({
-    days: 2,
+  const savedCountdownState = JSON.parse(localStorage.getItem('countdownState'));
+
+  const [countdown, setCountdown] = useState(savedCountdownState || {
+    days: 0,
     hours: 0,
-    minutes: 0,
-    seconds: 10,
+    minutes: 1,
+    seconds: 0,
   });
 
   const [countdownFinished, setCountdownFinished] = useState(false);
@@ -34,7 +36,7 @@ const Countdown = () => {
           seconds: updatedSeconds,
         };
       } else {
-        setCountdownFinished(true); // Countdown has finished
+        setCountdownFinished(true);
         return prevCountdown;
       }
     });
@@ -47,6 +49,16 @@ const Countdown = () => {
 
     return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    // Dont Forget to change the value
+    localStorage.removeItem('countdownState', JSON.stringify(countdown));
+
+
+    if (countdown.days === 0 && countdown.hours === 0 && countdown.minutes === 0 && countdown.seconds === 0) {
+      setCountdownFinished(true);
+    }
+  }, [countdown]);
 
   if (!countdownFinished) {
     return (
