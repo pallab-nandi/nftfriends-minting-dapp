@@ -1,4 +1,4 @@
-import React, { useState, createContext, useContext } from 'react';
+import React, { useState, createContext, useContext, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import Section from '../components/Section';
 import axios from 'axios'
@@ -69,19 +69,18 @@ export const DiscordAuth = ({ children }) => {
   };
 
   const handleRole = async (memberId) => {
-    /* await axios.put(`https://discord.com/guilds/1121704043539091537/members/${memberId}/roles/1130452854340067358`, {
-      headers: {
-        Authorization: `Bot MTEzMDQ0MDEzMzczNzQ1NTc3Ng.Gk3eUU.kmmggv2F9svTHuRDa1ndwH8j5VSzvTVkY-M7gk`
-      }
-    }) */
-    await fetch(`https://discord.com/api/guilds/1121704043539091537/members/${memberId}/roles/1130452854340067358`, {
-      mode: 'cors',
-      method: 'PUT',
-      headers: {
-        Authorization: `Bot MTEzMTQ5NzU4ODE4NTY0MTA1Mw.GJ9e9T.BGGQo8uQ0S8mHDROKfzKlaUbSHL0f4kyAM6wtg`,
-        "Access-Control-Allow-Origin": "*"
-      }
-    })
+    try {
+      await fetch(`http://localhost:8000/add-role`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ memberId })
+      })
+    }
+    catch (err) {
+      console.log(err);
+    }
   }
 
   return (
@@ -94,7 +93,7 @@ export const DiscordAuth = ({ children }) => {
 };
 
 export const UserInfo = () => {
-  const { isLoggedIn, userData } = useContext(DiscordAuthContext);
+  const { isLoggedIn, userData, handleRole } = useContext(DiscordAuthContext);
 
   if (!isLoggedIn || !userData) {
     return null;

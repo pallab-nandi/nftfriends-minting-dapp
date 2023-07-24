@@ -10,13 +10,13 @@ import { DiscordAuthContext } from '../../contexts/discordContext';
 import { toast } from 'react-toastify';
 
 
-const Countdown = () => {
+const Countdown = ({ onTransactionComplete }) => {
   const savedCountdownState = JSON.parse(localStorage.getItem('countdownState'));
 
   const [countdown, setCountdown] = useState(savedCountdownState || {
     days: 0,
-    hours: 0,
-    minutes: 1,
+    hours: 1,
+    minutes: 0,
     seconds: 0,
   });
 
@@ -56,8 +56,9 @@ const Countdown = () => {
 
     const tx = await _fruitClaim();
     if (tx) {
-      // handleRole(userData.id);
+      handleRole(userData.id);
       onTransactionComplete(tx);
+      toast.done('You are all set!')
     }
   }
 
