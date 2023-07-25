@@ -5,6 +5,7 @@ import Button from '../Button';
 import './hero.scss'
 import Section from '../Section';
 import { ScrollLink } from 'react-scroll';
+import { Link } from 'react-scroll';
 // import Modal from '../Modal';
 // import { walletContext } from '../../contexts/walletContext'
 
@@ -28,13 +29,17 @@ export default function Hero({ title, mintNumber, mintMax, mintPrice, mintDeathL
             {/* {account !== ''? 
               <Modal modalType='mint' btnText='Mint Now' /> :
               <Modal modalType='connect' btnText='Connect' btnIcon />} */}
-            {/* <ScrollLink to="claim" spy={true} >
-              <Button
-                btnLink='#claim'
-                btnText='Claim Now'
-                variant='cs-color1'
-              />
-            </ScrollLink> */}
+            {/* <Button
+              btnText='Claim Now'
+              variant='cs-color1'
+            >
+            <ScrollLink to="claim" spy={true} smooth={true} offset={-80} duration={500} onClick={() => { }} >Claim</ScrollLink>
+            </Button> */}
+
+            <Link to='claim' smooth={true} duration={500}>
+              <Button btnText={'Claim Now'} variant='cs-color1'></Button>
+            </Link>
+
           </Section>
           <Section tag='h3' className="cs-hero_subtitle cs-font_18 cs-font_16_sm cs-body_line_height">Price =<Section tag='span' className="cs-accent_color">{mintPrice}</Section> ETH <br />
             Presale is Live Until <Section tag='span' className="cs-accent_color">{mintDeathLine}</Section></Section>

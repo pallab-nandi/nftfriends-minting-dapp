@@ -13,7 +13,7 @@ import { DiscordAuthContext, SignInButton, SignOutButton, UserInfo } from "../..
 
 export default function Header() {
   const { account } = useContext(walletContext)
-  const { handleCallback, userData, isLoggedIn, setUserData, setIsLoggedIn } = useContext(DiscordAuthContext);
+  const { handleCallback } = useContext(DiscordAuthContext);
 
   useEffect(() => {
     const params = window.location.search;

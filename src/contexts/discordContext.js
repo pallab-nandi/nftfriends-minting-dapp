@@ -1,7 +1,6 @@
 import React, { useState, createContext, useContext, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import Section from '../components/Section';
-import axios from 'axios'
 
 
 export const DiscordAuthContext = createContext();
@@ -30,7 +29,7 @@ export const DiscordAuth = ({ children }) => {
   };
 
   const handleCallback = (code) => {
-    // Replace these values with your own
+
     const clientID = '1131497588185641053';
     const clientSecret = 'kLBVVAgeOZVp7FGiycqbWu7peenPr3Oh';
     const redirectURI = 'http://localhost:3000';
@@ -95,7 +94,7 @@ export const DiscordAuth = ({ children }) => {
 export const UserInfo = () => {
   const { isLoggedIn, userData, handleRole } = useContext(DiscordAuthContext);
 
-  if (!isLoggedIn || !userData) {
+  if (!isLoggedIn || !userData?.username) {
     return null;
   }
 
