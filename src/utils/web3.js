@@ -30,7 +30,7 @@ const contractData = async () => {
 // const length = (await data()).length;
 // const [contract, address, provider] = await data();
 
-const fruitlistStat = async (address) => {
+export const fruitlistStat = async (address) => {
 
     const provider = new ethers.BrowserProvider(window.ethereum);
     // const signer = provider.getSigner();
@@ -40,7 +40,7 @@ const fruitlistStat = async (address) => {
     return status;
 }
 
-const friendlistStat = async (accounts) => {
+export const friendlistStat = async (accounts) => {
     const provider = new ethers.BrowserProvider(window.ethereum);
     // const signer = provider.getSigner();
     const contract = new ethers.Contract(contractAddress, abi, provider);
@@ -49,7 +49,7 @@ const friendlistStat = async (accounts) => {
     return status;
 }
 
-const _claimStatus = async (accounts) => {
+export const _claimStatus = async (accounts) => {
     const provider = new ethers.BrowserProvider(window.ethereum);
     // const signer = provider.getSigner();
     const contract = new ethers.Contract(contractAddress, abi, provider);

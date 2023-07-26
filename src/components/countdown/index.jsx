@@ -49,11 +49,6 @@ const Countdown = ({ onTransactionComplete }) => {
 
   const useClaimHandle = async () => {
 
-    if (!userData?.username) {
-      toast.warn('Discord is not logged in!')
-      return;
-    }
-
     const tx = await _fruitClaim();
     if (tx) {
       handleRole(userData.id);

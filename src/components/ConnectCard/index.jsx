@@ -15,10 +15,6 @@ export default function ConnectCard() {
     if (!isMetaMaskInstalled()) {
       toast.error("Metamask isn't installed!");
     } else {
-      if (!userData?.username) {
-        toast.warning('Please login through Discord first!');
-        return
-      }
       await connectWallet()
         .then((data) => {
           setAccount(data[0]);

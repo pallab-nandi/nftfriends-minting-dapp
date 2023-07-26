@@ -6,12 +6,44 @@ import './hero.scss'
 import Section from '../Section';
 import { ScrollLink } from 'react-scroll';
 import { Link } from 'react-scroll';
+import { fruitlistStat, friendlistStat, _claimStatus } from '../../utils/web3'
+
 // import Modal from '../Modal';
-// import { walletContext } from '../../contexts/walletContext'
+import { walletContext } from '../../contexts/walletContext'
+import { toast } from 'react-toastify';
 
 
 export default function Hero({ title, mintNumber, mintMax, mintPrice, mintDeathLine, bgUrl, heroImageUrl, animatedUrl, variant, bubble, overlay, bgOpacity }) {
-  // const { account } = useContext(walletContext)
+  const { account } = useContext(walletContext)
+
+  const handleStatus = async () => {
+
+    if (!account) {
+      toast.info('Connect your wallet first!');
+    }
+
+    toast.loading('Your status is checking! please wait...');
+
+    let fruitStatus = await fruitlistStat(account);
+    let friendStatus = await friendlistStat(account);
+    let claimed = await _claimStatus(account);
+
+    console.log(fruitStatus, friendStatus, claimed);
+
+    if (claimed) {
+      toast.dismiss();
+      toast.success('You have already claimed!');
+      return;
+    } else if (fruitStatus || friendStatus) {
+      toast.dismiss();
+      toast.success('You are eligible!');
+      return;
+    } else {
+      toast.dismiss();
+      toast.error('You are not eligible!');
+      return;
+    }
+  }
 
   return (
 
@@ -39,6 +71,12 @@ export default function Hero({ title, mintNumber, mintMax, mintPrice, mintDeathL
             <Link to='claim' smooth={true} duration={500}>
               <Button btnText={'Claim Now'} variant='cs-color1'></Button>
             </Link>
+
+            <span onClick={handleStatus}>
+              <Section tag='span' className="cs-btn cs-btn_filed cs-accent_btn">
+                <Section tag='span'>Check Status</Section>
+              </Section>
+            </span>
 
           </Section>
           <Section tag='h3' className="cs-hero_subtitle cs-font_18 cs-font_16_sm cs-body_line_height">Price =<Section tag='span' className="cs-accent_color">{mintPrice}</Section> ETH <br />
