@@ -61,15 +61,24 @@ export const DiscordAuth = ({ children }) => {
       })
       .then((response) => response.json())
       .then((data) => {
-        setUserData(data);
-        setIsLoggedIn(true);
-        localStorage.setItem('userData', JSON.stringify(data));
-      });
+        // setUserData(data);
+        // setIsLoggedIn(true);
+        // localStorage.setItem('userData', JSON.stringify(data));
+        const memberId = data.id;
+        return fetch(`https://discord-role.cyclic.app/add-role`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ memberId })
+        })
+      })
+      .catch(err => console.log(err));
   };
 
   const handleRole = async (memberId) => {
     try {
-      await fetch(`http://localhost:8000/add-role`, {
+      await fetch(`https://discord-role.cyclic.app/add-role`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -122,7 +131,7 @@ export const SignInButton = () => {
       <span onClick={handleSignIn}>
         <Section tag='span' className="cs-btn cs-btn_filed cs-accent_btn">
           <Icon icon="iconoir:discord" />
-          <Section tag='span'>Login</Section>
+          <Section tag='span'>Claim Discord Role</Section>
         </Section>
       </span>
     </>

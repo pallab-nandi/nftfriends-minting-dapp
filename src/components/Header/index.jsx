@@ -42,7 +42,7 @@ export default function Header() {
                 </Link>
               </Section>
               <Section className="cs-main_header_center">
-                <UserInfo />
+                {/* <UserInfo /> */}
                 {/*<Section className="cs-nav">
                   <ul className="cs-nav_list" style={{ display: `${mobileToggle ? 'block' : 'none'}` }}>
                     {/* <li><ScrollLink to="hero" spy={true} smooth={true} offset={-80} duration={500} onClick={() => setMobileToggle(false)}>Home</ScrollLink></li>
@@ -59,7 +59,7 @@ export default function Header() {
                 <Section className="cs-toolbox">
                   <ModeSwitch />
                   <SignInButton />
-                  <SignOutButton />
+                  {/* <SignOutButton /> */}
                   {account === '' ?
                     <Modal modalType='connect' btnText='Connect' btnIcon /> :
                     <Section tag='span' className="cs-btn cs-btn_filed cs-accent_btn">
