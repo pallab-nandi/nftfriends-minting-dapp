@@ -10,19 +10,19 @@ import Confetti from 'react-confetti';
 export default function StatusPop({ tx }) {
   const [modal, setModal] = useState(true);
   const [playMusic, setPlayMusic] = useState(true);
-  // const audioRef = useRef();
+  const audioRef = useRef();
 
   const handlePopUp = () => {
     setModal(!modal);
     setPlayMusic(!playMusic);
   }
 
-  // useEffect(() => {
-  //   const audio = audioRef.current;
-  //   if (audio) {
-  //     audio.play();
-  //   }
-  // }, []);
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      audio.play();
+    }
+  }, []);
 
   return (
     <Section className={modal ? "cs-modal active" : "cs-modal"}>
@@ -38,7 +38,7 @@ export default function StatusPop({ tx }) {
           </Section>
         </Section>
       </Section>
-      {/* {playMusic && <audio ref={audioRef} src="../../music/pop-music.mp3" />} */}
+      {playMusic && <audio ref={audioRef} src="music/pop-music.mp3" />}
       <Confetti />
     </Section>
   )
