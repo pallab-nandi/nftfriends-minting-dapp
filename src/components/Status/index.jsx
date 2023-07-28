@@ -19,8 +19,9 @@ export default function StatusPop({ tx }) {
 
   useEffect(() => {
     const audio = audioRef.current;
-    if (audio) {
-      audio.play();
+    if (audio && playMusic) {
+      audio.play()
+        .catch(err => console.log(err));
     }
   }, []);
 
