@@ -4,6 +4,8 @@ import Status from './index';
 import { Icon } from '@iconify/react';
 import Button from '../Button';
 import Spacing from '../Spacing'
+import { SignInButton } from '../../contexts/discordContext';
+
 
 export default function StatusCard({ tx }) {
 
@@ -16,7 +18,7 @@ export default function StatusCard({ tx }) {
         <Icon icon="game-icons:glass-celebration" style={{ fontSize: '100px' }} />
       </ul>
       <Section className="cs-height_15 cs-height_lg_15" />
-      <Section tag='p' className="cs-m0">Discord Role Acquired : Not claimed</Section>
+      {/* <Section tag='p' className="cs-m0">Discord Role Acquired : Not claimed</Section> */}
       <Spacing lg='25' md='25' />
       <Button
         btnLink={`https://sepolia.etherscan.io/tx/${tx}`} // to be changed in mainnet
@@ -33,6 +35,8 @@ export default function StatusCard({ tx }) {
       >
         <Icon icon="skill-icons:twitter" />
       </Button>
+      <Spacing lg='25' md='25' />
+      <SignInButton />
     </Section>
   )
 }

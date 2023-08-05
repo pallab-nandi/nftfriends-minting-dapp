@@ -39,7 +39,7 @@ export default function StatusPop({ tx }) {
           </Section>
         </Section>
       </Section>
-      {playMusic && <audio ref={audioRef} src="music/pop-music.mp3" />}
+      {/* {playMusic && <audio ref={audioRef} src="music/pop-music.mp3" />} */}
       <Confetti />
     </Section>
   )
