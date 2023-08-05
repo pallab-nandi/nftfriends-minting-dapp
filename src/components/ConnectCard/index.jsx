@@ -38,7 +38,7 @@ export default function ConnectCard() {
         <li><Link to="/"><img src="/images/walletconnect.svg" alt="Logo" /></Link></li> */}
       </ul>
       <Section className="cs-height_15 cs-height_lg_15" />
-      <Section tag='p' className="cs-m0">Make sure you have loggedin with Discord <br /> before connecting wallet!</Section>
+      <Section tag='p' className="cs-m0">Connect your wallet to claim <br />and check status!</Section>
     </Section>
   )
 }

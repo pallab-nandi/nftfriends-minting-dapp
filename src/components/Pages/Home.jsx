@@ -70,7 +70,7 @@ export default function Home() {
         variant='cs-type1'
         bubble
       />
-      <Spacing lg='50' md='50' />
+      <Spacing lg='110' md='110' />
       <Section id="claim" className="container">
         <Section className="cs-right_space_40">
           <SectionHeading
@@ -80,12 +80,6 @@ export default function Home() {
         </Section>
         <Spacing lg='50' md='50' />
         <Section className="row">
-          <Section className="col-xl-3">
-            <CardStype3
-              title='Connect Your Discord'
-            />
-            <Section className="cs-height_25 cs-height_lg_25"></Section>
-          </Section>
           <Section className="col-xl-3">
             <CardStype3
               title='Connect Your Wallet'
@@ -101,6 +95,12 @@ export default function Home() {
           <Section className="col-xl-3">
             <CardStype3
               title='Reserve Your Precious Pass'
+            />
+            <Section className="cs-height_25 cs-height_lg_25"></Section>
+          </Section>
+          <Section className="col-xl-3">
+            <CardStype3
+              title='Claim Your Discord Role'
             />
             <Section className="cs-height_25 cs-height_lg_25"></Section>
           </Section>

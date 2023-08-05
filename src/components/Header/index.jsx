@@ -58,7 +58,7 @@ export default function Header() {
               <Section className="cs-main_header_right">
                 <Section className="cs-toolbox">
                   <ModeSwitch />
-                  <SignInButton />
+                  {/* <SignInButton /> */}
                   {/* <SignOutButton /> */}
                   {account === '' ?
                     <Modal modalType='connect' btnText='Connect' btnIcon /> :
