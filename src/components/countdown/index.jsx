@@ -234,12 +234,13 @@ const Countdown = ({ onTransactionComplete }) => {
       </div>
     );
   } else {
+    return (
     <div className="container">
       <div className="row">
         <div className="col-md-12 text-center">
           <FunFact title="PreClaim Timer" />
           <Spacing lg="25" md="25" />
-          <h1 style={{ color: "goldenrod" }}> Claim Complete</h1>
+          <h2 style={{ color: "goldenrod" }}> Claim Complete</h2>
           <p>Event has already occurred</p>
           <Spacing lg="25" md="25" />
           <Button btnText="Ended">
@@ -247,7 +248,8 @@ const Countdown = ({ onTransactionComplete }) => {
           </Button>
         </div>
       </div>
-    </div>;
+    </div>
+    );
   }
 };
 
